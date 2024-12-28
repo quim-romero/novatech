@@ -10,11 +10,13 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 import ScrollToTop from "./components/ScrollToTop";
+import Header from "./components/Header";
 
 export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <Header />
       <main className="min-h-screen p-6">
         <Routes>
           <Route path="/" element={<Home />} />
