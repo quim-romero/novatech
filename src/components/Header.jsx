@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import useDarkMode from "../hooks/useDarkMode";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const navItems = [
@@ -41,11 +42,29 @@ export default function Header() {
             className="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             aria-label="Toggle dark mode"
           >
-            {isDark ? (
-              <SunIcon className="h-5 w-5 text-yellow-400" />
-            ) : (
-              <MoonIcon className="h-5 w-5 text-gray-600 dark:text-gray-300" />
-            )}
+            <AnimatePresence mode="wait" initial={false}>
+              {isDark ? (
+                <motion.span
+                  key="sun"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <SunIcon className="h-5 w-5 text-yellow-400" />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="moon"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <MoonIcon className="h-5 w-5 text-gray-600 dark:text-gray-300" />
+                </motion.span>
+              )}
+            </AnimatePresence>
           </button>
         </div>
 
@@ -56,11 +75,29 @@ export default function Header() {
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             aria-label="Toggle dark mode"
           >
-            {isDark ? (
-              <SunIcon className="h-5 w-5 text-yellow-400" />
-            ) : (
-              <MoonIcon className="h-5 w-5 text-gray-600 dark:text-gray-300" />
-            )}
+            <AnimatePresence mode="wait" initial={false}>
+              {isDark ? (
+                <motion.span
+                  key="sun-mobile"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <SunIcon className="h-5 w-5 text-yellow-400" />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="moon-mobile"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <MoonIcon className="h-5 w-5 text-gray-600 dark:text-gray-300" />
+                </motion.span>
+              )}
+            </AnimatePresence>
           </button>
 
           <button
