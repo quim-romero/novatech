@@ -16,6 +16,7 @@ export default function Home() {
         />
       </Helmet>
 
+      {/* HERO */}
       <motion.section
         className="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 pt-12"
         initial={{ opacity: 0, y: 20 }}
@@ -50,6 +51,7 @@ export default function Home() {
         </a>
       </motion.section>
 
+      {/* CORE SERVICES */}
       <motion.section
         className="max-w-7xl mx-auto px-6 py-24"
         initial={{ opacity: 0, y: 40 }}
@@ -58,7 +60,10 @@ export default function Home() {
         transition={{ duration: 0.6 }}
       >
         <div className="text-center mb-12" role="region" aria-labelledby="core-services-title">
-          <h2 id="core-services-title" className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2
+            id="core-services-title"
+            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          >
             Our Core Services
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -67,13 +72,13 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {[CloudIcon, CpuChipIcon, ShieldCheckIcon].map((Icon, idx) => (
             <div
               key={idx}
-              className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-md transition-shadow bg-white dark:bg-gray-800"
+              className="p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-colors text-center"
             >
-              <Icon className="h-10 w-10 text-brand mb-4" />
+              <Icon className="h-10 w-10 text-brand mb-4 mx-auto" />
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 {services[idx].category}
               </h3>
