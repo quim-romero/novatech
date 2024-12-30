@@ -17,7 +17,7 @@ export default function Home() {
       </Helmet>
 
       <motion.section
-        className="space-y-4 min-h-[80vh] flex flex-col justify-center px-6 pt-12"
+        className="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 pt-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
@@ -36,22 +36,14 @@ export default function Home() {
           ]}
           wrapper="h1"
           speed={50}
-          className="text-3xl font-bold text-brand"
+          className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4"
           repeat={Infinity}
         />
 
-        <p className="text-gray-600 dark:text-gray-400">
-          Welcome to our platform!
+        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mb-6">
+          NovaTech empowers businesses with cloud infrastructure, artificial
+          intelligence, and cybersecurity services.
         </p>
-
-        <nav className="flex gap-4">
-          <Link to="/about" className="text-sm text-blue-500 underline">
-            About
-          </Link>
-          <Link to="/contact" className="text-sm text-blue-500 underline">
-            Contact
-          </Link>
-        </nav>
 
         <a href="#services" className="btn mt-6">
           Explore our services
@@ -65,8 +57,8 @@ export default function Home() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="text-center mb-12" role="region" aria-labelledby="core-services-title">
+          <h2 id="core-services-title" className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Our Core Services
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
