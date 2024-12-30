@@ -24,7 +24,16 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         <TypeAnimation
-          sequence={["NovaTech Home", 1500, "Cloud.", 1500, "AI.", 1500, "Cybersecurity.", 1500]}
+          sequence={[
+            "NovaTech Home",
+            1500,
+            "Cloud.",
+            1500,
+            "AI.",
+            1500,
+            "Cybersecurity.",
+            1500,
+          ]}
           wrapper="h1"
           speed={50}
           className="text-3xl font-bold text-brand"
@@ -44,7 +53,44 @@ export default function Home() {
           </Link>
         </nav>
 
-        <a href="#services" className="btn mt-6">Explore our services</a>
+        <a href="#services" className="btn mt-6">
+          Explore our services
+        </a>
+      </motion.section>
+
+      <motion.section
+        className="max-w-7xl mx-auto px-6 py-24"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Our Core Services
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            We specialize in scalable cloud infrastructure, advanced AI
+            solutions and enterprise-grade security.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {[CloudIcon, CpuChipIcon, ShieldCheckIcon].map((Icon, idx) => (
+            <div
+              key={idx}
+              className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-md transition-shadow bg-white dark:bg-gray-800"
+            >
+              <Icon className="h-10 w-10 text-brand mb-4" />
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                {services[idx].category}
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {services[idx].description}
+              </p>
+            </div>
+          ))}
+        </div>
       </motion.section>
     </>
   );
