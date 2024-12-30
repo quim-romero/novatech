@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import services from "../data/services";
+import { CloudIcon, CpuChipIcon, ShieldCheckIcon } from "../components/icons";
 
 export default function Home() {
   return (
