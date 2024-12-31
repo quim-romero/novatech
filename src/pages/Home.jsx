@@ -5,6 +5,12 @@ import { TypeAnimation } from "react-type-animation";
 import services from "../data/services";
 import { CloudIcon, CpuChipIcon, ShieldCheckIcon } from "../components/icons";
 
+import vercelLogo from "../assets/logos/vercel.png";
+import stripeLogo from "../assets/logos/stripe.png";
+import notionLogo from "../assets/logos/notion.png";
+import linearLogo from "../assets/logos/linear.png";
+import slackLogo from "../assets/logos/slack.png";
+
 export default function Home() {
   return (
     <>
