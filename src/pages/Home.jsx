@@ -101,7 +101,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="bg-gray-50 dark:bg-gray-900 py-20 px-6"
+        className="bg-gray-50 dark:bg-gray-900 py-20 px-6 mt-16 border-t dark:border-gray-700"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -138,7 +138,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="bg-white dark:bg-gray-900 py-24 px-6"
+        className="bg-white dark:bg-gray-900 py-24 px-6 mt-16 border-t dark:border-gray-700"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
