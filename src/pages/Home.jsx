@@ -136,6 +136,27 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+
+      <motion.section
+        className="bg-white dark:bg-gray-900 py-24 px-6"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Ready to transform your digital infrastructure?
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            Contact us today and discover how NovaTech can elevate your business
+            with secure, scalable and intelligent solutions.
+          </p>
+          <a href="/contact" className="btn">
+            Get in touch
+          </a>
+        </div>
+      </motion.section>
     </>
   );
 }
