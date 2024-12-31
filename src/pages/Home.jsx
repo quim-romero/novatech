@@ -65,7 +65,11 @@ export default function Home() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="text-center mb-12" role="region" aria-labelledby="core-services-title">
+        <div
+          className="text-center mb-12"
+          role="region"
+          aria-labelledby="core-services-title"
+        >
           <h2
             id="core-services-title"
             className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
@@ -93,6 +97,43 @@ export default function Home() {
               </p>
             </div>
           ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="bg-gray-50 dark:bg-gray-900 py-20 px-6"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="max-w-7xl mx-auto text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Trusted by leading companies
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            NovaTech powers infrastructure and innovation for teams around the
+            world.
+          </p>
+        </div>
+
+        <div className="max-w-6xl mx-auto rounded-xl px-6 py-10 dark:bg-gray-700/60 dark:border dark:border-gray-600 transition-colors duration-300">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center">
+            {[vercelLogo, stripeLogo, notionLogo, linearLogo, slackLogo].map(
+              (logo, index) => (
+                <div
+                  key={index}
+                  className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                >
+                  <img
+                    src={logo}
+                    alt="Client logo"
+                    className="w-[120px] h-[40px] object-contain"
+                  />
+                </div>
+              )
+            )}
+          </div>
         </div>
       </motion.section>
     </>
