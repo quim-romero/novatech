@@ -17,6 +17,13 @@ const values = [
   },
 ];
 
+const team = [
+  { name: "Sophie Allen", role: "CEO", photo: "/assets/team/sophie.png" },
+  { name: "Daniel Kim", role: "CTO", photo: "/assets/team/daniel.png" },
+  { name: "Lea Tran", role: "Lead Designer", photo: "/assets/team/lea.png" },
+  { name: "Marco Ruiz", role: "AI Architect", photo: "/assets/team/marco.png" },
+];
+
 export default function About() {
   return (
     <>
