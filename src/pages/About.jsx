@@ -41,6 +41,29 @@ export default function About() {
         <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto">
           Learn more about NovaTech Solutions.
         </p>
+
+        <motion.div
+          className="grid md:grid-cols-3 gap-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          {values.map((item, idx) => (
+            <motion.div
+              key={idx}
+              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:shadow-md transition"
+              whileHover={{ y: -4 }}
+            >
+              <h3 className="text-xl font-semibold text-brand mb-2">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                {item.text}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
     </>
   );
