@@ -2,6 +2,21 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 
+const values = [
+  {
+    title: "Mission",
+    text: "Deliver innovative technology solutions that drive long-term growth and transformation.",
+  },
+  {
+    title: "Vision",
+    text: "Become a global partner of choice in AI, cloud infrastructure and cybersecurity.",
+  },
+  {
+    title: "Culture",
+    text: "We value curiosity, clarity, technical excellence and meaningful impact over everything.",
+  },
+];
+
 export default function About() {
   return (
     <>
