@@ -1,14 +1,32 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div className="space-y-4">
-      <h1 className="text-3xl font-bold text-brand">About Us</h1>
-      <p className="text-gray-600">Learn more about NovaTech Solutions.</p>
-      <nav className="flex gap-4">
-        <Link to="/" className="text-sm text-blue-500 underline">Home</Link>
-        <Link to="/contact" className="text-sm text-blue-500 underline">Contact</Link>
-      </nav>
-    </div>
+    <>
+      <Helmet>
+        <title>About Us – NovaTech Solutions</title>
+        <meta
+          name="description"
+          content="Learn more about NovaTech's mission, vision and expert team behind our solutions."
+        />
+      </Helmet>
+
+      <motion.div
+        className="space-y-4 max-w-5xl mx-auto px-6 py-24"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.4 }}
+      >
+        <h1 className="text-3xl md:text-5xl font-bold text-brand dark:text-white text-center mb-6">
+          About Us
+        </h1>
+        <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto">
+          Learn more about NovaTech Solutions.
+        </p>
+      </motion.div>
+    </>
   );
 }

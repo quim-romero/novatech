@@ -32,8 +32,6 @@ export default function Home() {
       >
         <TypeAnimation
           sequence={[
-            "NovaTech Home",
-            1500,
             "Cloud.",
             1500,
             "AI.",
