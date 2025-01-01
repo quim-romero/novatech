@@ -71,6 +71,49 @@ export default function About() {
             </motion.div>
           ))}
         </motion.div>
+
+        <motion.section
+          className="bg-gray-50 dark:bg-gray-900 py-20 px-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="max-w-6xl mx-auto text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Meet Our Team
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              A diverse team of strategists, engineers and creatives powering
+              NovaTech forward.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 items-center">
+            {team.map((member, idx) => (
+              <motion.div
+                key={idx}
+                className="group"
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  className="w-full rounded-lg shadow-md object-cover aspect-[4/5]"
+                />
+                <div className="mt-4 text-center">
+                  <h4 className="font-semibold text-gray-900 dark:text-white">
+                    {member.name}
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    {member.role}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
       </motion.div>
     </>
   );
