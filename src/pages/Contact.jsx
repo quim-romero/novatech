@@ -74,17 +74,23 @@ export default function Contact() {
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                 Email
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <a
+                href="mailto:contact@novatech.com"
+                className="text-gray-600 dark:text-gray-400 hover:underline"
+              >
                 contact@novatech.com
-              </p>
+              </a>
             </div>
             <div>
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                 Phone
               </h2>
-              <p className="text-gray-600 dark:text-gray-400">
+              <a
+                href="tel:+15551234567"
+                className="text-gray-600 dark:text-gray-400 hover:underline"
+              >
                 +1 (555) 123-4567
-              </p>
+              </a>
             </div>
           </div>
 
@@ -161,7 +167,7 @@ export default function Contact() {
       </motion.section>
 
       <motion.div
-        className="mt-20 mb-24 max-w-5xl mx-auto px-6"
+        className="mt-16 mb-20 max-w-5xl mx-auto px-6"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
