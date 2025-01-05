@@ -71,14 +71,8 @@ export default function InfraMonitor() {
 
       <ResponsiveContainer width="100%" height={280}>
         <LineChart data={data}>
-          <XAxis
-            dataKey="time"
-            tick={{ fill: "#9ca3af", fontSize: 12 }}
-          />
-          <YAxis
-            domain={[0, 100]}
-            tick={{ fill: "#9ca3af", fontSize: 12 }}
-          />
+          <XAxis dataKey="time" tick={{ fill: "#9ca3af", fontSize: 12 }} />
+          <YAxis domain={[0, 100]} tick={{ fill: "#9ca3af", fontSize: 12 }} />
           <Tooltip
             contentStyle={{ backgroundColor: "#111827", border: "none" }}
             labelStyle={{ color: "#f3f4f6" }}
@@ -91,6 +85,8 @@ export default function InfraMonitor() {
             stroke="#f97316"
             strokeWidth={2}
             dot={false}
+            isAnimationActive={true}
+            animationDuration={500}
           />
           <Line
             type="monotone"
@@ -98,6 +94,8 @@ export default function InfraMonitor() {
             stroke="#3b82f6"
             strokeWidth={2}
             dot={false}
+            isAnimationActive={true}
+            animationDuration={500}
           />
         </LineChart>
       </ResponsiveContainer>

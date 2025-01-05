@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 
-import DemoChart from "../components/DemoChart";
+import InfraMonitor from "../components/InfraMonitor";
 import AIDemo from "../components/AIDemo";
 import SecurityAlerts from "../components/SecurityAlerts";
 
@@ -34,7 +34,7 @@ export default function TechShowcase() {
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
           Infrastructure Monitoring
         </h2>
-        <DemoChart />
+        <InfraMonitor />
       </motion.section>
 
       <motion.section className="max-w-6xl mx-auto px-6 py-24 border-t border-gray-200 dark:border-gray-700">
