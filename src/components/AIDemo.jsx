@@ -4,6 +4,10 @@ const positiveWords = ["happy", "joyful", "love", "excited"];
 const negativeWords = ["sad", "angry", "terrible", "hate"];
 const neutralWords = ["ok", "fine", "average", "meh"];
 
+import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 export default function AIDemo() {
   const [input, setInput] = useState("");
   const [emotionCounts, setEmotionCounts] = useState(null);
@@ -24,6 +28,19 @@ export default function AIDemo() {
     setEmotionCounts(counts);
     setDominantEmotion(dominant);
     setShowResult(true);
+  };
+
+  const data = {
+    labels: ["Positive", "Negative", "Neutral"],
+    datasets: [
+      {
+        data: emotionCounts
+          ? [emotionCounts.positive, emotionCounts.negative, emotionCounts.neutral]
+          : [0, 0, 0],
+        backgroundColor: ["#34d399", "#f87171", "#d1d5db"],
+        borderWidth: 1,
+      },
+    ],
   };
 
   return (
@@ -59,6 +76,14 @@ export default function AIDemo() {
         >
           Try Again
         </button>
+      )}
+
+      {showResult && (
+        <div className="mt-8">
+          <div className="w-64 mx-auto">
+            <Pie data={data} />
+          </div>
+        </div>
       )}
     </div>
   );
