@@ -8,6 +8,8 @@ import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+import { TypeAnimation } from "react-type-animation";
+
 export default function AIDemo() {
   const [input, setInput] = useState("");
   const [emotionCounts, setEmotionCounts] = useState(null);
@@ -41,6 +43,12 @@ export default function AIDemo() {
         borderWidth: 1,
       },
     ],
+  };
+
+  const responseMap = {
+    positive: "Glad you're feeling great! Keep it up!",
+    negative: "Sorry you're feeling that way. We're here for you.",
+    neutral: "Thanks for checking in. Wishing you a steady day.",
   };
 
   return (
@@ -82,6 +90,16 @@ export default function AIDemo() {
         <div className="mt-8">
           <div className="w-64 mx-auto">
             <Pie data={data} />
+          </div>
+
+          <div className="mt-6">
+            <p className="text-sm text-gray-500 dark:text-gray-400">Analyzing input...</p>
+            <TypeAnimation
+              sequence={[responseMap[dominantEmotion] || "Thanks for your input."]}
+              speed={50}
+              wrapper="p"
+              className="text-lg font-medium mt-2 text-gray-900 dark:text-white"
+            />
           </div>
         </div>
       )}
