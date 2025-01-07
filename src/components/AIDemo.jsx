@@ -9,6 +9,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 
 export default function AIDemo() {
   const [input, setInput] = useState("");
@@ -32,6 +33,13 @@ export default function AIDemo() {
     setShowResult(true);
   };
 
+  const resetDemo = () => {
+    setShowResult(false);
+    setInput("");
+    setEmotionCounts(null);
+    setDominantEmotion(null);
+  };
+
   const data = {
     labels: ["Positive", "Negative", "Neutral"],
     datasets: [
@@ -52,7 +60,12 @@ export default function AIDemo() {
   };
 
   return (
-    <div className="max-w-xl mx-auto text-center bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md border dark:border-gray-700">
+    <motion.div
+      className="max-w-xl mx-auto text-center bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md border dark:border-gray-700"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
         How are you feeling today?
       </h3>
@@ -74,12 +87,7 @@ export default function AIDemo() {
         </button>
       ) : (
         <button
-          onClick={() => {
-            setShowResult(false);
-            setInput("");
-            setEmotionCounts(null);
-            setDominantEmotion(null);
-          }}
+          onClick={resetDemo}
           className="btn bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600"
         >
           Try Again
@@ -103,6 +111,6 @@ export default function AIDemo() {
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }
