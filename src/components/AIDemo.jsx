@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const positiveWords = ["happy", "joyful", "love", "excited"];
-const negativeWords = ["sad", "angry", "terrible", "hate"];
-const neutralWords = ["ok", "fine", "average", "meh"];
+const positiveWords = ["happy", "joyful", "love", "excited", "amazing", "great", "fantastic", "glad", "hopeful"];
+const negativeWords = ["sad", "angry", "terrible", "hate", "bad", "awful", "frustrated", "upset", "depressed"];
+const neutralWords = ["ok", "fine", "average", "normal", "meh", "so-so"];
 
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
