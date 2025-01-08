@@ -33,6 +33,18 @@ export default function SecurityAlerts() {
     return () => clearInterval(interval);
   }, []);
 
+  const counts = {
+    ddos: alerts.filter((a) => a.type === "ddos").length,
+    malware: alerts.filter((a) => a.type === "malware").length,
+    brute: alerts.filter((a) => a.type === "brute").length
+  };
+
+  const pieData = [
+    { name: "DDoS", value: counts.ddos },
+    { name: "Malware", value: counts.malware },
+    { name: "Brute Force", value: counts.brute }
+  ];
+
   return (
     <div className="grid md:grid-cols-2 gap-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
       <div>
@@ -52,6 +64,32 @@ export default function SecurityAlerts() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+          Alert Type Distribution
+        </h3>
+        <ResponsiveContainer width="100%" height={260}>
+          <PieChart>
+            <Pie
+              data={pieData}
+              dataKey="value"
+              nameKey="name"
+              innerRadius={60}
+              outerRadius={90}
+              paddingAngle={5}
+            >
+              {pieData.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={Object.values(COLORS)[index]}
+                />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );
