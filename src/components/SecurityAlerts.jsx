@@ -16,7 +16,6 @@ const COLORS = {
 const attackTypes = ["ddos", "malware", "brute"];
 
 export default function SecurityAlerts() {
-  const [attackData, setAttackData] = useState([]);
   const [alerts, setAlerts] = useState([]);
 
   useEffect(() => {
