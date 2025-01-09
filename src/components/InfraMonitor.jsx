@@ -44,16 +44,29 @@ export default function InfraMonitor() {
         Infrastructure Monitoring (Live)
       </h3>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-        <div className="bg-gray-100 dark:bg-gray-700 rounded-md p-4 text-center">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6" role="list">
+        <div
+          className="bg-gray-100 dark:bg-gray-700 rounded-md p-4 text-center"
+          role="listitem"
+        >
           <p className="text-sm text-gray-500 dark:text-gray-300">CPU Usage</p>
           <p className="text-xl font-semibold text-orange-500">{latest.cpu}%</p>
         </div>
-        <div className="bg-gray-100 dark:bg-gray-700 rounded-md p-4 text-center">
-          <p className="text-sm text-gray-500 dark:text-gray-300">Memory Usage</p>
-          <p className="text-xl font-semibold text-blue-500">{latest.memory}%</p>
+        <div
+          className="bg-gray-100 dark:bg-gray-700 rounded-md p-4 text-center"
+          role="listitem"
+        >
+          <p className="text-sm text-gray-500 dark:text-gray-300">
+            Memory Usage
+          </p>
+          <p className="text-xl font-semibold text-blue-500">
+            {latest.memory}%
+          </p>
         </div>
-        <div className="bg-gray-100 dark:bg-gray-700 rounded-md p-4 text-center">
+        <div
+          className="bg-gray-100 dark:bg-gray-700 rounded-md p-4 text-center"
+          role="listitem"
+        >
           <p className="text-sm text-gray-500 dark:text-gray-300">Status</p>
           <p
             className={`text-xl font-semibold ${
@@ -71,8 +84,22 @@ export default function InfraMonitor() {
 
       <ResponsiveContainer width="100%" height={280}>
         <LineChart data={data}>
-          <XAxis dataKey="time" tick={{ fill: "#9ca3af", fontSize: 12 }} />
-          <YAxis domain={[0, 100]} tick={{ fill: "#9ca3af", fontSize: 12 }} />
+          <XAxis
+            dataKey="time"
+            tick={{
+              fill: "#9ca3af",
+              fontSize: 12,
+              className: "dark:text-gray-100",
+            }}
+          />
+          <YAxis
+            domain={[0, 100]}
+            tick={{
+              fill: "#9ca3af",
+              fontSize: 12,
+              className: "dark:text-gray-100",
+            }}
+          />
           <Tooltip
             contentStyle={{ backgroundColor: "#111827", border: "none" }}
             labelStyle={{ color: "#f3f4f6" }}

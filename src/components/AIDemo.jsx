@@ -1,7 +1,27 @@
 import { useState } from "react";
 
-const positiveWords = ["happy", "joyful", "love", "excited", "amazing", "great", "fantastic", "glad", "hopeful"];
-const negativeWords = ["sad", "angry", "terrible", "hate", "bad", "awful", "frustrated", "upset", "depressed"];
+const positiveWords = [
+  "happy",
+  "joyful",
+  "love",
+  "excited",
+  "amazing",
+  "great",
+  "fantastic",
+  "glad",
+  "hopeful",
+];
+const negativeWords = [
+  "sad",
+  "angry",
+  "terrible",
+  "hate",
+  "bad",
+  "awful",
+  "frustrated",
+  "upset",
+  "depressed",
+];
 const neutralWords = ["ok", "fine", "average", "normal", "meh", "so-so"];
 
 import { Pie } from "react-chartjs-2";
@@ -25,8 +45,8 @@ export default function AIDemo() {
       else if (negativeWords.includes(word)) counts.negative++;
       else if (neutralWords.includes(word)) counts.neutral++;
     });
-    const dominant = Object.entries(counts).reduce(
-      (a, b) => (b[1] > a[1] ? b : a)
+    const dominant = Object.entries(counts).reduce((a, b) =>
+      b[1] > a[1] ? b : a
     )[0];
     setEmotionCounts(counts);
     setDominantEmotion(dominant);
@@ -45,7 +65,11 @@ export default function AIDemo() {
     datasets: [
       {
         data: emotionCounts
-          ? [emotionCounts.positive, emotionCounts.negative, emotionCounts.neutral]
+          ? [
+              emotionCounts.positive,
+              emotionCounts.negative,
+              emotionCounts.neutral,
+            ]
           : [0, 0, 0],
         backgroundColor: ["#34d399", "#f87171", "#d1d5db"],
         borderWidth: 1,
@@ -82,6 +106,7 @@ export default function AIDemo() {
         <button
           onClick={analyzeSentiment}
           className="btn bg-brand text-white hover:bg-brand-dark"
+          aria-label="Analyze your emotional sentiment based on input"
         >
           Analyze
         </button>
@@ -89,6 +114,7 @@ export default function AIDemo() {
         <button
           onClick={resetDemo}
           className="btn bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600"
+          aria-label="Reset the demo and try a new input"
         >
           Try Again
         </button>
@@ -97,13 +123,28 @@ export default function AIDemo() {
       {showResult && (
         <div className="mt-8">
           <div className="w-64 mx-auto">
-            <Pie data={data} />
+            <Pie
+              data={data}
+              options={{
+                plugins: {
+                  legend: {
+                    labels: {
+                      color: "#111827",
+                    },
+                  },
+                },
+              }}
+            />
           </div>
 
           <div className="mt-6">
-            <p className="text-sm text-gray-500 dark:text-gray-400">Analyzing input...</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Analyzing input...
+            </p>
             <TypeAnimation
-              sequence={[responseMap[dominantEmotion] || "Thanks for your input."]}
+              sequence={[
+                responseMap[dominantEmotion] || "Thanks for your input.",
+              ]}
               speed={50}
               wrapper="p"
               className="text-lg font-medium mt-2 text-gray-900 dark:text-white"
