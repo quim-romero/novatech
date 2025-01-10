@@ -19,6 +19,28 @@ export default function Styleguide() {
           <Button variant="outline">Outline</Button>
           <Button variant="ghost">Ghost</Button>
         </div>
+
+        <div className="mt-12 space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Typography
+          </h2>
+          <p className="text-lg font-semibold">Heading</p>
+          <p className="text-base">Body text sample with neutral contrast.</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Caption text with subtle tone.
+          </p>
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Brand Colors
+          </h2>
+          <div className="flex gap-6">
+            <div className="w-20 h-20 bg-brand rounded-lg shadow-inner"></div>
+            <div className="w-20 h-20 bg-brand-dark rounded-lg shadow-inner"></div>
+            <div className="w-20 h-20 bg-brand-light rounded-lg shadow-inner"></div>
+          </div>
+        </div>
       </div>
     </>
   );
