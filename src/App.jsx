@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import TechShowcase from "./pages/TechShowcase";
+import Styleguide from "./pages/Styleguide";
 import NotFound from "./pages/NotFound";
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/showcase" element={<TechShowcase />} />
+          <Route path="/styleguide" element={<Styleguide />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
