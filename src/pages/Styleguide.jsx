@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Button from "../components/ui/Button";
+import Input from "../components/ui/Input";
 
 export default function Styleguide() {
   return (
@@ -40,6 +41,9 @@ export default function Styleguide() {
             <div className="w-20 h-20 bg-brand-dark rounded-lg shadow-inner"></div>
             <div className="w-20 h-20 bg-brand-light rounded-lg shadow-inner"></div>
           </div>
+          
+          <div className="mt-8"></div>
+          <Input label="Email address" placeholder="you@company.com" />
         </div>
       </div>
     </>
