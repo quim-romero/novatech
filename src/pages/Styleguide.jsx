@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
 import Badge from "../components/ui/Badge";
+import Tabs from "../components/ui/Tabs";
 
 export default function Styleguide() {
   return (
@@ -53,6 +54,21 @@ export default function Styleguide() {
           <Badge color="red">Error</Badge>
           <Badge color="blue">Info</Badge>
         </div>
+
+        <div className="mt-12"></div>
+        <Tabs
+          tabs={[
+            {
+              label: "Design",
+              content: <p>Design system tokens, spacing, color.</p>,
+            },
+            { label: "Components", content: <p>Buttons, forms, UI kit.</p> },
+            {
+              label: "Accessibility",
+              content: <p>WCAG, aria roles, color contrast.</p>,
+            },
+          ]}
+        />
       </div>
     </>
   );
