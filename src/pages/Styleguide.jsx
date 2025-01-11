@@ -69,6 +69,20 @@ export default function Styleguide() {
             },
           ]}
         />
+
+        <div className="mt-12 space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Layout & Spacing
+          </h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-brand text-white text-center py-6 rounded">
+              Grid 1
+            </div>
+            <div className="bg-brand-dark text-white text-center py-6 rounded">
+              Grid 2
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
