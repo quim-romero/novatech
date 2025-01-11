@@ -13,9 +13,14 @@ export default function Styleguide() {
       </Helmet>
 
       <div className="max-w-6xl mx-auto px-6 py-24">
-        <h1 className="text-3xl font-bold mb-10 text-gray-900 dark:text-white">
-          NovaTech Styleguide
+        <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          NovaTech UI Styleguide
         </h1>
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-10 max-w-2xl">
+          This style guide showcases practical examples of components,
+          typography, colors, spacing, and other design system elements I use to
+          build modern, accessible, and scalable interfaces.
+        </p>
 
         <div className="space-x-4">
           <Button>Default</Button>
