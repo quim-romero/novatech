@@ -83,6 +83,17 @@ export default function Styleguide() {
             </div>
           </div>
         </div>
+
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Shadows
+          </h2>
+          <div className="flex gap-6">
+            <div className="w-24 h-24 bg-white dark:bg-gray-800 rounded shadow-sm" />
+            <div className="w-24 h-24 bg-white dark:bg-gray-800 rounded shadow-md" />
+            <div className="w-24 h-24 bg-white dark:bg-gray-800 rounded shadow-lg" />
+          </div>
+        </div>
       </div>
     </>
   );
