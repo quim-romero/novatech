@@ -131,6 +131,16 @@ export default function Styleguide() {
           </h2>
           <div className="w-12 h-12 border-4 border-brand border-t-transparent rounded-full animate-spin mx-auto" />
         </div>
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Skeleton Placeholder
+          </h2>
+          <div className="space-y-3">
+            <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-3/4 animate-pulse"></div>
+            <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-1/2 animate-pulse"></div>
+            <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-full animate-pulse"></div>
+          </div>
+        </div>
       </div>
     </>
   );
