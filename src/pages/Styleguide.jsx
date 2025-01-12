@@ -31,19 +31,28 @@ export default function Styleguide() {
           build modern, accessible, and scalable interfaces.
         </p>
 
-        <div className="space-x-4">
-          <Button onClick={triggerToast}>Default</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="ghost">Ghost</Button>
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Buttons
+          </h2>
+          <div className="space-x-4">
+            <Button onClick={triggerToast}>Default</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="ghost">Ghost</Button>
+          </div>
+
+          {showToast && (
+            <div className="fixed bottom-6 right-6 bg-brand text-white px-4 py-2 rounded shadow-lg animate-fade-in">
+              This is a toast notification!
+            </div>
+          )}
         </div>
 
-        {showToast && (
-          <div className="fixed bottom-6 right-6 bg-brand text-white px-4 py-2 rounded shadow-lg animate-fade-in">
-            This is a toast notification!
-          </div>
-        )}
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
 
-        <div className="mt-12 space-y-4">
+        <div className="space-y-4">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
             Typography
           </h2>
@@ -54,8 +63,10 @@ export default function Styleguide() {
           </p>
         </div>
 
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
             Brand Colors
           </h2>
           <div className="flex gap-6">
@@ -65,32 +76,53 @@ export default function Styleguide() {
           </div>
         </div>
 
-        <div className="mt-8"></div>
-        <Input label="Email address" placeholder="you@company.com" />
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
 
-        <div className="mt-8 space-x-2">
-          <Badge>Default</Badge>
-          <Badge color="green">Success</Badge>
-          <Badge color="red">Error</Badge>
-          <Badge color="blue">Info</Badge>
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Input
+          </h2>
+          <Input label="Email address" placeholder="you@company.com" />
         </div>
 
-        <div className="mt-12"></div>
-        <Tabs
-          tabs={[
-            {
-              label: "Design",
-              content: <p>Design system tokens, spacing, color.</p>,
-            },
-            { label: "Components", content: <p>Buttons, forms, UI kit.</p> },
-            {
-              label: "Accessibility",
-              content: <p>WCAG, aria roles, color contrast.</p>,
-            },
-          ]}
-        />
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
 
-        <div className="mt-12 space-y-4">
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Badges
+          </h2>
+          <div className="space-x-2">
+            <Badge>Default</Badge>
+            <Badge color="green">Success</Badge>
+            <Badge color="red">Error</Badge>
+            <Badge color="blue">Info</Badge>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Tabs
+          </h2>
+          <Tabs
+            tabs={[
+              {
+                label: "Design",
+                content: <p>Design system tokens, spacing, color.</p>,
+              },
+              { label: "Components", content: <p>Buttons, forms, UI kit.</p> },
+              {
+                label: "Accessibility",
+                content: <p>WCAG, aria roles, color contrast.</p>,
+              },
+            ]}
+          />
+        </div>
+
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+
+        <div className="space-y-4">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
             Layout & Spacing
           </h2>
@@ -104,8 +136,10 @@ export default function Styleguide() {
           </div>
         </div>
 
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
             Shadows
           </h2>
           <div className="flex gap-6">
@@ -115,22 +149,34 @@ export default function Styleguide() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mt-12">
-          <Card title="Feature">
-            Scalable cloud infrastructure with automated provisioning and
-            monitoring.
-          </Card>
-          <Card title="AI Integration">
-            Deploy NLP models and computer vision with NovaTech APIs.
-          </Card>
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Cards
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card title="Feature">
+              Scalable cloud infrastructure with automated provisioning and
+              monitoring.
+            </Card>
+            <Card title="AI Integration">
+              Deploy NLP models and computer vision with NovaTech APIs.
+            </Card>
+          </div>
         </div>
 
-        <div className="mt-12 space-y-4">
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+
+        <div className="space-y-4">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
             Loading Spinner
           </h2>
           <div className="w-12 h-12 border-4 border-brand border-t-transparent rounded-full animate-spin mx-auto" />
         </div>
+
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Skeleton Placeholder
