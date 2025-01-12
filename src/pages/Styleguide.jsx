@@ -124,6 +124,13 @@ export default function Styleguide() {
             Deploy NLP models and computer vision with NovaTech APIs.
           </Card>
         </div>
+
+        <div className="mt-12 space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Loading Spinner
+          </h2>
+          <div className="w-12 h-12 border-4 border-brand border-t-transparent rounded-full animate-spin mx-auto" />
+        </div>
       </div>
     </>
   );
