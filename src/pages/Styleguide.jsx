@@ -3,6 +3,7 @@ import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
 import Badge from "../components/ui/Badge";
 import Tabs from "../components/ui/Tabs";
+import Card from "../components/ui/Card";
 
 export default function Styleguide() {
   return (
@@ -98,6 +99,16 @@ export default function Styleguide() {
             <div className="w-24 h-24 bg-white dark:bg-gray-800 rounded shadow-md" />
             <div className="w-24 h-24 bg-white dark:bg-gray-800 rounded shadow-lg" />
           </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 mt-12">
+          <Card title="Feature">
+            Scalable cloud infrastructure with automated provisioning and
+            monitoring.
+          </Card>
+          <Card title="AI Integration">
+            Deploy NLP models and computer vision with NovaTech APIs.
+          </Card>
         </div>
       </div>
     </>
