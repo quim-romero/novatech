@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
 import Badge from "../components/ui/Badge";
@@ -6,6 +7,13 @@ import Tabs from "../components/ui/Tabs";
 import Card from "../components/ui/Card";
 
 export default function Styleguide() {
+  const [showToast, setShowToast] = useState(false);
+
+  const triggerToast = () => {
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
+
   return (
     <>
       <Helmet>
@@ -24,10 +32,16 @@ export default function Styleguide() {
         </p>
 
         <div className="space-x-4">
-          <Button>Default</Button>
+          <Button onClick={triggerToast}>Default</Button>
           <Button variant="outline">Outline</Button>
           <Button variant="ghost">Ghost</Button>
         </div>
+
+        {showToast && (
+          <div className="fixed bottom-6 right-6 bg-brand text-white px-4 py-2 rounded shadow-lg animate-fade-in">
+            This is a toast notification!
+          </div>
+        )}
 
         <div className="mt-12 space-y-4">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
