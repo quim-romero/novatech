@@ -7,10 +7,14 @@ import Tabs from "../components/ui/Tabs";
 import Card from "../components/ui/Card";
 
 import useDarkMode from "../hooks/useDarkMode";
+import useDebounce from "../hooks/useDebounce";
 
 export default function Styleguide() {
   const [showToast, setShowToast] = useState(false);
   const [isDark, setIsDark] = useDarkMode();
+
+  const [search, setSearch] = useState("");
+  const debounced = useDebounce(search, 500);
 
   const triggerToast = () => {
     setShowToast(true);
@@ -193,12 +197,26 @@ export default function Styleguide() {
 
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Use Dark Mode
+            Dark Mode
           </h2>
           <p className="mb-4">Toggle the site theme:</p>
           <Button onClick={() => setIsDark(!isDark)}>
             Switch to {isDark ? "Light" : "Dark"} Mode
           </Button>
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Debounce
+          </h2>
+          <Input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Type something..."
+          />
+          <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+            Debounced: <span className="font-mono">{debounced}</span>
+          </p>
         </div>
       </div>
     </>
