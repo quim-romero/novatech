@@ -6,8 +6,11 @@ import Badge from "../components/ui/Badge";
 import Tabs from "../components/ui/Tabs";
 import Card from "../components/ui/Card";
 
+import useDarkMode from "../hooks/useDarkMode";
+
 export default function Styleguide() {
   const [showToast, setShowToast] = useState(false);
+  const [isDark, setIsDark] = useDarkMode();
 
   const triggerToast = () => {
     setShowToast(true);
@@ -186,6 +189,16 @@ export default function Styleguide() {
             <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-1/2 animate-pulse"></div>
             <div className="h-4 bg-gray-300 dark:bg-gray-700 rounded w-full animate-pulse"></div>
           </div>
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Use Dark Mode
+          </h2>
+          <p className="mb-4">Toggle the site theme:</p>
+          <Button onClick={() => setIsDark(!isDark)}>
+            Switch to {isDark ? "Light" : "Dark"} Mode
+          </Button>
         </div>
       </div>
     </>
