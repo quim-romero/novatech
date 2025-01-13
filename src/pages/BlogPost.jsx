@@ -2,8 +2,10 @@ import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import blogPosts from "../data/blogPosts";
+import useScrollTop from "../hooks/useScrollTop";
 
 export default function BlogPost() {
+  useScrollTop();
   const { slug } = useParams();
   const post = blogPosts.find((p) => p.slug === slug);
 
