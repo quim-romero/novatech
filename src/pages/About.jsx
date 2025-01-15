@@ -70,15 +70,17 @@ export default function About() {
             </motion.div>
           ))}
         </motion.div>
+      </motion.div>
 
-        <motion.section
-          className="bg-gray-50 dark:bg-gray-900 py-20 px-6"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="max-w-6xl mx-auto text-center mb-12">
+      <motion.section
+        className="bg-gray-50 dark:bg-gray-900 py-20 px-6"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
               Meet Our Team
             </h2>
@@ -112,8 +114,8 @@ export default function About() {
               </motion.div>
             ))}
           </div>
-        </motion.section>
-      </motion.div>
+        </div>
+      </motion.section>
     </>
   );
 }
