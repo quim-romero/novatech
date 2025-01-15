@@ -35,16 +35,16 @@ export default function About() {
       </Helmet>
 
       <motion.div
-        className="space-y-4 max-w-5xl mx-auto px-6 py-24"
+        className="max-w-5xl mx-auto px-6 py-24"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.4 }}
       >
-        <h1 className="text-3xl md:text-5xl font-bold text-brand dark:text-white text-center mb-6">
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 text-center">
           Who We Are
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto">
+        <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12">
           NovaTech was founded to empower organizations with secure, intelligent and scalable digital solutions. We believe in technology that makes businesses faster, smarter and safer.
         </p>
 
