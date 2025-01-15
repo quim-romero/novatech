@@ -42,10 +42,10 @@ export default function About() {
         transition={{ duration: 0.4 }}
       >
         <h1 className="text-3xl md:text-5xl font-bold text-brand dark:text-white text-center mb-6">
-          About Us
+          Who We Are
         </h1>
         <p className="text-gray-600 dark:text-gray-400 text-center max-w-2xl mx-auto">
-          Learn more about NovaTech Solutions.
+          NovaTech was founded to empower organizations with secure, intelligent and scalable digital solutions. We believe in technology that makes businesses faster, smarter and safer.
         </p>
 
         <motion.div

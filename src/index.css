@@ -10,6 +10,53 @@
   body {
     @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
   }
+
+  body.dark {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold text-gray-900 dark:text-white;
+  }
+
+  a {
+    @apply text-brand transition-colors;
+    text-decoration: none;
+  }
+
+  a:hover {
+    @apply text-brand-dark;
+    text-decoration: none;
+  }
+
+  ::selection {
+    @apply bg-brand text-white;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.brand.DEFAULT") theme("colors.gray.200");
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: theme("colors.gray.100");
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: theme("colors.brand.DEFAULT");
+    border-radius: 9999px;
+    border: 2px solid theme("colors.gray.100");
+  }
 }
 
 @layer components {
