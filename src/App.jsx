@@ -1,8 +1,10 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  useLocation
 } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -22,8 +24,19 @@ export default function App() {
     <Router>
       <ScrollToTop />
       <Header />
-      <main className="min-h-screen p-6">
-        <Routes>
+      <AppContent />
+      <Footer />
+    </Router>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+
+  return (
+    <main className="min-h-screen p-6">
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -33,8 +46,7 @@ export default function App() {
           <Route path="/styleguide" element={<Styleguide />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </main>
-      <Footer />
-    </Router>
+      </AnimatePresence>
+    </main>
   );
 }
