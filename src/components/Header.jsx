@@ -10,6 +10,7 @@ export default function Header() {
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/showcase", label: "Live Demos" },
+    { path: "/blog", label: "Blog" },
     { path: "/contact", label: "Contact" },
   ];
 
