@@ -30,24 +30,57 @@ export default function TechShowcase() {
         </p>
       </motion.section>
 
-      <motion.section className="max-w-6xl mx-auto px-6 py-24">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-          Infrastructure Monitoring
-        </h2>
+      <motion.section
+        className="max-w-6xl mx-auto px-6 py-24"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Infrastructure Monitoring
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            A live animated chart showing simulated performance metrics.
+          </p>
+        </div>
         <InfraMonitor />
       </motion.section>
 
-      <motion.section className="max-w-6xl mx-auto px-6 py-24 border-t border-gray-200 dark:border-gray-700">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-          AI Sentiment Analysis
-        </h2>
+      <motion.section
+        className="max-w-6xl mx-auto px-6 py-24 border-t border-gray-200 dark:border-gray-700"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            AI Sentiment Analysis
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Test our sentiment engine with live text input.
+          </p>
+        </div>
         <AIDemo />
       </motion.section>
 
-      <motion.section className="max-w-6xl mx-auto px-6 py-24 border-t border-gray-200 dark:border-gray-700">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-          Simulated Security Feed
-        </h2>
+      <motion.section
+        className="max-w-6xl mx-auto px-6 py-24 border-t border-gray-200 dark:border-gray-700"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Simulated Security Feed
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Real-time event stream of system security logs.
+          </p>
+        </div>
         <SecurityAlerts />
       </motion.section>
     </>
