@@ -126,11 +126,23 @@ export default function AIDemo() {
             <Pie
               data={data}
               options={{
+                responsive: true,
                 plugins: {
                   legend: {
+                    position: "bottom",
                     labels: {
-                      color: "#111827",
+                      color: "#d1d5db",
+                      padding: 12,
+                      usePointStyle: true,
                     },
+                    onClick: null,
+                  },
+                  tooltip: {
+                    backgroundColor: "#1f2937",
+                    titleColor: "#f9fafb",
+                    bodyColor: "#f3f4f6",
+                    borderColor: "#4b5563",
+                    borderWidth: 1,
                   },
                 },
               }}
