@@ -1,12 +1,113 @@
-# React + Vite
+# NovaTech Solutions — Cloud, AI & Cybersecurity Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![E2E Tests](https://github.com/quim-romero/novatech/actions/workflows/e2e.yml/badge.svg)
 
-Currently, two official plugins are available:
+> _Secure. Scalable. Intelligent solutions for a digital-first world._
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🧭 About NovaTech
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**NovaTech Solutions** is a cutting-edge platform focused on **cloud infrastructure**, **AI-driven automation**, and **enterprise-grade security**.
+
+Crafted with precision and clarity, the app delivers:
+
+- ☁️ Cloud, AI, and security service overviews  
+- 📊 Live demos for infrastructure, sentiment AI, and threat detection  
+- 🎨 Visual design system and interactive styleguide  
+- 🌓 Light/dark mode toggle with local preference  
+- 🧪 CI-ready testing with Cypress 
+
+---
+
+## 🚀 Live Preview
+
+👉 [https://novatech.quimromero.com/](https://novatech.quimromero.com/)
+
+---
+
+## ✨ Features
+
+- 🧠 Real-time AI sentiment analysis demo  
+- 🔒 Live security event feed with attack type breakdown  
+- 📈 Infrastructure monitoring with CPU/memory graphs  
+- 💡 Visual styleguide showcasing design tokens  
+- 🌗 Dark/light mode support  
+- 📱 Fully responsive layout  
+- 🧪 E2E tests via Cypress 
+
+---
+
+## 🧠 Tech Stack
+
+| Tech                        | Role                                       |
+|-----------------------------|--------------------------------------------|
+| **React + Vite**            | Frontend framework and dev server          |
+| **Framer Motion**           | Animation and transitions                  |
+| **Tailwind CSS**            | Styling with custom design tokens          |
+| **Recharts + Chart.js**     | Visual data components                     |
+| **React Hook Form + Yup**   | Validated contact form                     |
+| **React Helmet Async**      | SEO meta management                        |
+| **Cypress**                 | Unit testing                               |
+| **GitHub Actions**          | Continuous integration                     |
+
+---
+
+## 🗂 Project Structure
+
+- `src/`
+  - `components/` – Reusable UI: charts, modals, tabs, demos
+  - `pages/` – Main routes: Home, About, Contact, Showcase, Blog
+  - `hooks/` – Custom logic for dark mode, persistence, reduced motion
+  - `data/` – Blog and services data
+- `cypress/` – Unit test setup and coverage
+- `public/` – Static assets and favicons
+
+---
+
+## 🧪 End-to-End Testing
+
+NovaTech includes E2E tests using **Cypress**, integrated via **GitHub Actions** for each PR and push.
+
+Currently tested:
+
+- ✅ Home and CTA visibility
+- ✅ Contact form renders and submits
+
+Coming soon:
+
+- 🧠 Sentiment analysis interaction
+- 🔒 Security feed filters and updates
+- 📈 Infrastructure graph assertions
+
+🧪 [View CI status →](https://github.com/quim-romero/novatech/actions)
+
+---
+
+## 📸 Screenshots
+
+| Home | About | Security Feed |
+|------|---------|---------------|
+| ![Home](./screenshots/home.png) | ![AI](./screenshots/about.png) | ![Security](./screenshots/security.png) |
+
+---
+
+## 🧩 Notes
+
+- ✨ Built from scratch — no templates used  
+- 💡 Designed as a modern portfolio case study  
+- 🔐 Focused on performance, accessibility and clarity  
+
+---
+
+## 📬 Contact
+
+Looking for a frontend engineer who blends design with engineering precision?
+
+- 📧 quim@quimromero.com  
+- 🌐 [https://novatech.quimromero.com/](https://novatech.quimromero.com/)
+
+---
+
+> _NovaTech bridges powerful tech with human-centered design —  
+> empowering digital growth with trust, speed and intelligence._
