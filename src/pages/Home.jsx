@@ -2,7 +2,12 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import services from "../data/services";
-import { CloudIcon, CpuChipIcon, ShieldCheckIcon } from "../components/icons";
+
+import {
+  CloudIcon as HeroCloudIcon,
+  CpuChipIcon as HeroCpuChipIcon,
+  ShieldCheckIcon as HeroShieldCheckIcon,
+} from "@heroicons/react/24/outline";
 
 import vercelLogo from "../assets/logos/vercel.png";
 import stripeLogo from "../assets/logos/stripe.png";
@@ -21,7 +26,6 @@ export default function Home() {
         />
       </Helmet>
 
-      {/* HERO */}
       <motion.section
         className="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 pt-12"
         initial={{ opacity: 0, y: 20 }}
@@ -30,14 +34,7 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         <TypeAnimation
-          sequence={[
-            "Cloud.",
-            1500,
-            "AI.",
-            1500,
-            "Cybersecurity.",
-            1500,
-          ]}
+          sequence={["Cloud.", 1500, "AI.", 1500, "Cybersecurity.", 1500]}
           wrapper="h1"
           speed={50}
           className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4"
@@ -54,16 +51,15 @@ export default function Home() {
         </a>
       </motion.section>
 
-      {/* CORE SERVICES */}
       <motion.section
-        className="max-w-7xl mx-auto px-6 py-24"
+        className="max-w-7xl mx-auto px-6 py-16"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
         <div
-          className="text-center mb-12"
+          className="text-center mb-8"
           role="region"
           aria-labelledby="core-services-title"
         >
@@ -80,31 +76,33 @@ export default function Home() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {[CloudIcon, CpuChipIcon, ShieldCheckIcon].map((Icon, idx) => (
-            <div
-              key={idx}
-              className="p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-colors text-center"
-            >
-              <Icon className="h-10 w-10 text-brand mb-4 mx-auto" />
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                {services[idx].category}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {services[idx].description}
-              </p>
-            </div>
-          ))}
+          {[HeroCloudIcon, HeroCpuChipIcon, HeroShieldCheckIcon].map(
+            (Icon, idx) => (
+              <div
+                key={idx}
+                className="p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-colors text-center"
+              >
+                <Icon className="h-10 w-10 text-brand mb-4 mx-auto" />
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  {services[idx].category}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {services[idx].description}
+                </p>
+              </div>
+            )
+          )}
         </div>
       </motion.section>
 
       <motion.section
-        className="bg-gray-50 dark:bg-gray-900 py-20 px-6 mt-16 border-t dark:border-gray-700"
+        className="bg-gray-50 dark:bg-gray-900 py-16 px-6 mt-12"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <div className="max-w-7xl mx-auto text-center mb-12">
+        <div className="max-w-7xl mx-auto text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Trusted by leading companies
           </h2>
@@ -135,7 +133,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="bg-white dark:bg-gray-900 py-24 px-6 mt-16 border-t dark:border-gray-700"
+        className="bg-white dark:bg-gray-900 py-16 px-6 mt-12"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
