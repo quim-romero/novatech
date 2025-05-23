@@ -90,7 +90,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
             {team.map((member, idx) => (
               <motion.div
                 key={idx}
