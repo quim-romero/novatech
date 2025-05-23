@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import {
   PieChart,
   Pie,
@@ -11,37 +11,59 @@ import {
 const ATTACK_TYPES = ["DDoS", "Malware", "Brute Force"];
 
 const COLORS = {
-  "DDoS": "#f97316",
-  "Malware": "#ef4444",
+  DDoS: "#f97316",
+  Malware: "#ef4444",
   "Brute Force": "#3b82f6",
 };
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined"
+      ? window.matchMedia("(max-width: 640px)").matches
+      : false
+  );
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const onChange = (e) => setIsMobile(e.matches);
+    mq.addEventListener?.("change", onChange) || mq.addListener(onChange);
+    return () =>
+      mq.removeEventListener?.("change", onChange) ||
+      mq.removeListener(onChange);
+  }, []);
+  return isMobile;
+}
 
 export default function SecurityAlerts() {
   const [alerts, setAlerts] = useState([]);
   const [filter, setFilter] = useState("All");
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const type = ATTACK_TYPES[Math.floor(Math.random() * ATTACK_TYPES.length)];
+      const type =
+        ATTACK_TYPES[Math.floor(Math.random() * ATTACK_TYPES.length)];
       const newAlert = {
         id: Date.now(),
         type,
-        message: `New suspicious activity detected`,
+        message: "New suspicious activity detected",
         time: new Date().toLocaleTimeString(),
       };
       setAlerts((prev) => [newAlert, ...prev.slice(0, 19)]);
     }, 4000);
-
     return () => clearInterval(interval);
   }, []);
 
   const filteredAlerts =
     filter === "All" ? alerts : alerts.filter((a) => a.type === filter);
 
-  const pieData = ATTACK_TYPES.map((type) => ({
-    name: type,
-    value: alerts.filter((a) => a.type === type).length,
-  }));
+  const pieData = useMemo(
+    () =>
+      ATTACK_TYPES.map((type) => ({
+        name: type,
+        value: alerts.filter((a) => a.type === type).length,
+      })),
+    [alerts]
+  );
 
   return (
     <div className="flex flex-col md:flex-row gap-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
@@ -65,17 +87,19 @@ export default function SecurityAlerts() {
         </div>
 
         <ul
-          className="space-y-3 max-h-[300px] overflow-auto pr-2 scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600"
+          className="space-y-3 max-h-[168px] md:max-h-[300px] overflow-auto pr-2 scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600"
           role="list"
         >
           {filteredAlerts.length === 0 && (
-            <li className="text-sm text-gray-500 dark:text-gray-400">No alerts yet...</li>
+            <li className="text-sm text-gray-500 dark:text-gray-400">
+              No alerts yet...
+            </li>
           )}
           {filteredAlerts.map((alert) => (
             <li
               key={alert.id}
               role="listitem"
-              className="bg-gray-100 dark:bg-gray-700 p-3 rounded-md flex justify-between items-center animate-pulse"
+              className="bg-gray-100 dark:bg-gray-700 p-3 rounded-md flex justify-between items-center"
             >
               <span className="font-medium text-sm text-gray-800 dark:text-white">
                 {alert.type}
@@ -88,38 +112,44 @@ export default function SecurityAlerts() {
         </ul>
       </div>
 
-      <div className="flex-1">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+      <div className="flex-1 md:max-w-[50%] flex flex-col items-center justify-center">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 text-center">
           Alert Type Distribution
         </h3>
 
-        <div className="h-[200px] md:h-[260px]">
+        <div className="h-[160px] md:h-[260px] w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
+            <PieChart
+              margin={{ top: 0, right: 0, bottom: isMobile ? 6 : 16, left: 0 }}
+            >
               <Pie
                 data={pieData}
                 dataKey="value"
                 nameKey="name"
-                innerRadius={60}
-                outerRadius={90}
-                paddingAngle={5}
-                label
+                innerRadius={isMobile ? 42 : 60}
+                outerRadius={isMobile ? 62 : 90}
+                paddingAngle={isMobile ? 2 : 5}
+                label={!isMobile}
                 isAnimationActive
               >
                 {pieData.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[entry.name]}
-                  />
+                  <Cell key={`cell-${index}`} fill={COLORS[entry.name]} />
                 ))}
               </Pie>
 
               <Tooltip
                 contentStyle={{ backgroundColor: "#1f2937", border: "none" }}
-                itemStyle={{ color: "#f3f4f6" }}
-                labelStyle={{ color: "#f3f4f6" }}
+                itemStyle={{ color: "#f3f4f6", fontSize: 12 }}
+                labelStyle={{ color: "#f3f4f6", fontSize: 12 }}
               />
-              <Legend verticalAlign="bottom" height={36} />
+              <Legend
+                verticalAlign="bottom"
+                align="center"
+                layout="horizontal"
+                iconType="square"
+                iconSize={isMobile ? 8 : 14}
+                wrapperStyle={{ fontSize: isMobile ? 10 : 12 }}
+              />
             </PieChart>
           </ResponsiveContainer>
         </div>
